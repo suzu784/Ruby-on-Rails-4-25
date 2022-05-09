@@ -1,0 +1,9 @@
+<h1>Book detail</h1>
+  <%= image_tag @book.get_image %>
+  <p><%= @book.title %></p>
+  <p><%= @book.opinion %></p>
+
+  <% if @book.user == current_user %>
+    <%= link_to "Edit", edit_book_path(@book.id) %>
+    <%= link_to "Destroy", book_path, method: :delete %>
+  <% end %>
